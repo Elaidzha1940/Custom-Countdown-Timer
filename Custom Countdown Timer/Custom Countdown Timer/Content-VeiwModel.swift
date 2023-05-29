@@ -41,7 +41,7 @@ extension ContentView {
         func updateCountdown() {
             guard isActive else { return }
             
-            let now = Data()
+            let now = Date()
             let diff = endDate.timeIntervalSince1970 - now.timeIntervalSince1970
             
             if diff <= 0 {

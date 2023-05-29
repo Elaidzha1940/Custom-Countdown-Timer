@@ -18,41 +18,64 @@ struct ContentView: View {
     
     var body: some View {
         
-        VStack {
-            Text("\(vm.time)")
-                .font(.system(size: 70, weight: .medium, design: .rounded))
-                .frame(width: width)
-                .background(.thinMaterial)
-                .cornerRadius(20)
-                .overlay(RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.blue, lineWidth: 4))
-                .alert("Timer done!", isPresented: $vm.showingAlert) {
-                    Button("Continue", role: .cancel) {
-                        //code
-                    }
-                }
-            
-            Slider(value: $vm.minutes, in: 1...10, step: 1)
-                .padding()
-                .frame(width: width)
-                .disabled(vm.isActive)
-                .animation(.easeOut, value: vm.minutes)
-            
-            HStack(spacing: 50) {
-                Button("Start") {
-                    vm.start(minutes: vm.minutes)
-                }
-                .disabled(vm.isActive)
+        ZStack {
+            Color.brown.opacity(0.7)
+            VStack {
                 
-                Button("Reset", action: vm.reset)
-                    .tint(.cyan)
+                VStack(alignment: .leading) {
+                    Button {
+                        //action
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.white)
+                    }
+                    .frame(width: 75, height: 60)
+                    .background(Color.black).opacity(0.4)
+                    .cornerRadius(20)
+                    .padding()
+                }
+                
+                Text("\(vm.time)")
+                    .font(.system(size: 70, weight: .medium, design: .rounded))
+                    .frame(width: width)
+                    .background(.thinMaterial)
+                    .cornerRadius(20)
+                    .overlay(RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.yellow, lineWidth: 4))
+                    .alert("Timer is over!", isPresented: $vm.showingAlert) {
+                        Button("Continue", role: .cancel) {
+                            //code
+                        }
+                    }
+                
+                Slider(value: $vm.minutes, in: 1...10, step: 1)
+                    .padding()
+                    .frame(width: width)
+                    .disabled(vm.isActive)
+                    .animation(.easeOut, value: vm.minutes)
+                    .background(Color.black).opacity(0.4)
+                    .cornerRadius(20)
+
+                
+                HStack(spacing: 50) {
+                    Button("Start") {
+                        vm.start(minutes: vm.minutes)
+                    }
+                    .disabled(vm.isActive)
+                    .tint(.white)
+                    
+                    Button("Reset", action: vm.reset)
+                        .tint(.black)
+                }
+                .frame(width: width)
+                
             }
-            .frame(width: width)
-            
+            .onReceive(timer) { _ in
+                vm.updateCountdown()
+            }
         }
-        .onReceive(timer) { _ in
-            vm.updateCountdown()
-        }
+        .ignoresSafeArea(.all)
+        
     }
 }
 
