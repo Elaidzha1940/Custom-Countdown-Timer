@@ -5,7 +5,6 @@
 //  Created by: Elaidzha Shchukin
 //  Date: 29.05.2023
 //
-//
 //  */
 
 import Foundation
@@ -57,7 +56,7 @@ extension ContentView {
             let seconds = calendar.component(.second, from: date)
             
             self.minutes = Float(minutes)
-            self.time = String(format: "%d:02d", minutes, seconds)
+            self.time = String(format: "%d:%02d", minutes, seconds)
         }
     }
 }

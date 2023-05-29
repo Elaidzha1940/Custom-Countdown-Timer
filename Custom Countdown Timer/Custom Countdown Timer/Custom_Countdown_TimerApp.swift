@@ -1,9 +1,11 @@
+//  /*
 //
-//  Custom_Countdown_TimerApp.swift
-//  Custom Countdown Timer
+//  Project: Custom Countdown Timer
+//  File: Custom_Countdown_TimerApp.swift
+//  Created by: Elaidzha Shchukin
+//  Date: 29.05.2023
 //
-//  Created by Elaidzha Shchukin on 29.05.2023.
-//
+//  */
 
 import SwiftUI
 

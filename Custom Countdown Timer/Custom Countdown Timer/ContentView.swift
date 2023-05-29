@@ -32,6 +32,7 @@ struct ContentView: View {
                     .frame(width: 75, height: 60)
                     .background(Color.black).opacity(0.4)
                     .cornerRadius(20)
+                    .offset(x: -190, y: -190)
                     .padding()
                 }
                 
@@ -41,7 +42,7 @@ struct ContentView: View {
                     .background(.thinMaterial)
                     .cornerRadius(20)
                     .overlay(RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.yellow, lineWidth: 4))
+                        .stroke(Color.brown, lineWidth: 4))
                     .alert("Timer is over!", isPresented: $vm.showingAlert) {
                         Button("Continue", role: .cancel) {
                             //code
@@ -70,10 +71,12 @@ struct ContentView: View {
                 .frame(width: width)
                 
             }
+            .accentColor(.black)
             .onReceive(timer) { _ in
                 vm.updateCountdown()
             }
         }
+        .background(Color.black)
         .ignoresSafeArea(.all)
         
     }
