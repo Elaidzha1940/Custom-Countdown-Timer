@@ -50,6 +50,14 @@ extension ContentView {
                 self.showingAlert = true
                 return
             }
+            
+            let date = Date(timeIntervalSince1970: diff)
+            let calendar = Calendar.current
+            let minutes = calendar.component(.minute, from: date)
+            let seconds = calendar.component(.second, from: date)
+            
+            self.minutes = Float(minutes)
+            self.time = String(format: "%d:02d", minutes, seconds)
         }
     }
 }
