@@ -36,6 +36,18 @@ struct ContentView: View {
                 .padding()
                 .frame(width: width)
                 .disabled(vm.isActive)
+                .animation(.easeOut, value: vm.minutes)
+            
+            HStack(spacing: 50) {
+                Button("Start") {
+                    vm.start(minutes: vm.minutes)
+                }
+                .disabled(vm.isActive)
+                
+                Button("Reset", action: vm.reset)
+                    .tint(.cyan)
+            }
+            .frame(width: width)
             
         }
         .onReceive(timer) { _ in
