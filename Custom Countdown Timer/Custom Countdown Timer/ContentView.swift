@@ -20,6 +20,21 @@ struct ContentView: View {
         
         VStack {
             Text("\(vm.time)")
+                .font(.system(size: 70, weight: .medium, design: .rounded))
+                .frame(width: width)
+                .background(.thinMaterial)
+                .cornerRadius(20)
+                .overlay(RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.blue, lineWidth: 4))
+                .alert("Timer done!", isPresented: $vm.showingAlert) {
+                    Button("Continue", role: .cancel) {
+                        //code
+                    }
+                }
+            
+            Slider(value: $vm.minutes, in: 1...10, step: 1)
+                .padding()
+                .frame()
             
         }
         .onReceive(timer) { _ in
