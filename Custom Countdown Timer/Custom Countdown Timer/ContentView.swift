@@ -34,7 +34,8 @@ struct ContentView: View {
             
             Slider(value: $vm.minutes, in: 1...10, step: 1)
                 .padding()
-                .frame()
+                .frame(width: width)
+                .disabled(vm.isActive)
             
         }
         .onReceive(timer) { _ in
