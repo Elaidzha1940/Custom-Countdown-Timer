@@ -27,7 +27,9 @@ extension ContentView {
         
         func start(minutes: Float) {
             self.initialTime = Int(minutes)
-            
+            self.endDate = Date()
+            self.isActive = true
+            self.endDate = Calendar.current.date(byAdding: minute, value: Int(minutes), to: endDate)!
         }
     }
 }
