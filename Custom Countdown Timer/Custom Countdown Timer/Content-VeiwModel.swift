@@ -29,7 +29,17 @@ extension ContentView {
             self.initialTime = Int(minutes)
             self.endDate = Date()
             self.isActive = true
-            self.endDate = Calendar.current.date(byAdding: minute, value: Int(minutes), to: endDate)!
+            self.endDate = Calendar.current.date(byAdding: .minute, value: Int(minutes), to: endDate)!
+        }
+        
+        func reset() {
+            self.minutes = Float(initialTime)
+            self.isActive = false
+            self.time = "\(Int(minutes)):00"
+        }
+        
+        func updateCountdown() {
+            guard isActive 
         }
     }
 }
