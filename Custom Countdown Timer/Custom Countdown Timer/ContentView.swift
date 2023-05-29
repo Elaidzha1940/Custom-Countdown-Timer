@@ -10,14 +10,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject private var vm = ViewMoel()
+    private let timer = Timer.publish(every: 1, on: .main, in:
+            .common).autoconnect()
+    private let width: Double = 250
+    
     var body: some View {
+        
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("\(vm.time)")
+            
         }
-        .padding()
+        .onReceive(timer) { _ in
+            vm.updateCountdown()
+        }
     }
 }
 
