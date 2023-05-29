@@ -11,6 +11,7 @@
 		E4D4F0012A24CF88008089D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4F0002A24CF88008089D0 /* ContentView.swift */; };
 		E4D4F0032A24CF89008089D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4D4F0022A24CF89008089D0 /* Assets.xcassets */; };
 		E4D4F0072A24CF89008089D0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4D4F0062A24CF89008089D0 /* Preview Assets.xcassets */; };
+		E4D4F00E2A24D092008089D0 /* Content-VeiwModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4F00D2A24D092008089D0 /* Content-VeiwModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		E4D4F0022A24CF89008089D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4D4F0042A24CF89008089D0 /* Custom_Countdown_Timer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Custom_Countdown_Timer.entitlements; sourceTree = "<group>"; };
 		E4D4F0062A24CF89008089D0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E4D4F00D2A24D092008089D0 /* Content-VeiwModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Content-VeiwModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				E4D4F0022A24CF89008089D0 /* Assets.xcassets */,
 				E4D4F0042A24CF89008089D0 /* Custom_Countdown_Timer.entitlements */,
 				E4D4F0052A24CF89008089D0 /* Preview Content */,
+				E4D4F00D2A24D092008089D0 /* Content-VeiwModel.swift */,
 			);
 			path = "Custom Countdown Timer";
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			files = (
 				E4D4F0012A24CF88008089D0 /* ContentView.swift in Sources */,
 				E4D4EFFF2A24CF88008089D0 /* Custom_Countdown_TimerApp.swift in Sources */,
+				E4D4F00E2A24D092008089D0 /* Content-VeiwModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
