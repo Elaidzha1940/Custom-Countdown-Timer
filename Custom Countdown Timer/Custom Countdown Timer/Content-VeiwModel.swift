@@ -39,7 +39,17 @@ extension ContentView {
         }
         
         func updateCountdown() {
-            guard isActive 
+            guard isActive else { return }
+            
+            let now = Data()
+            let diff = endDate.timeIntervalSince1970 - now.timeIntervalSince1970
+            
+            if diff <= 0 {
+                self.isActive = false
+                self.time = "0:00"
+                self.showingAlert = true
+                return
+            }
         }
     }
 }
